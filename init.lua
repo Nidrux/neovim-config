@@ -24,6 +24,7 @@ local plugins = {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "nvim-telescope/telescope.nvim", tag = "0.1.5",dependencies = { "nvim-lua/plenary.nvim" } },
   { "wakatime/vim-wakatime", lazy = false },
+  { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } }
 -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }
 }
 local opts = {}
@@ -41,7 +42,8 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 --  indent = { enable = true },
 --  auto_install = true
 -- })
-
 -- Color theme
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
+-- LuaLine Setup
+require('lualine').setup()
